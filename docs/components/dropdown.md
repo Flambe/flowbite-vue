@@ -257,3 +257,25 @@ import { FwbDropdown, FwbListGroup, FwbListGroupItem } from 'flowbite-vue'
 import { FwbDropdown, ListGroup, ListGroupItem } from 'flowbite-vue'
 </script>
 ```
+
+## API
+
+### Props
+| Name     | Values | Default |
+|----------|--------|---------|
+| placement | `DropdownPlacement` | `'bottom'`  |
+| text | `string` | `''` |
+| transition | `string` | `''` |
+| closeInside | `boolean` | `false` |
+| alignToEnd | `boolean` | `false` |
+
+### Events
+| Name  | Description          |
+|-------|----------------------|
+| hide  | the dropdown is hidden by any means |
+
+### Slots
+| Name       | Description       |
+|------------|-------------------|
+| default    | dropdown content  |
+| suffix     | button suffix     |

@@ -45,7 +45,7 @@
 
 <script lang="ts" setup>
 import { computed, ref, toRef } from 'vue'
-import { onClickOutside } from '@vueuse/core'
+import { onClickOutside, whenever } from '@vueuse/core'
 import type { DropdownPlacement } from './types'
 import FwbButton from '@/components/FwbButton/FwbButton.vue'
 import FwbSlotListener from '@/components/utils/FwbSlotListener/FwbSlotListener.vue'
@@ -72,6 +72,13 @@ const props = withDefaults(
     closeInside: false,
     alignToEnd: false,
   },
+)
+
+const emit = defineEmits<{(e: 'hide'): void}>()
+
+whenever(
+  () => !visible.value,
+  () => emit('hide'),
 )
 
 const placementTransitionMap: Record<DropdownPlacement, string> = {
